@@ -1,0 +1,485 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: "Epilogue", sans-serif;
+}
+
+.topnav {
+  position: relative; /* Needed for absolute positioning inside */
+  height: 50px; /* Fix the height */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  background-color: #577bc1;
+  font-weight: bold;
+  z-index: 10;
+  overflow: hidden; /* THIS IS IMPORTANT */
+  
+}
+
+.topnav a {
+  float: left;
+  color: #000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #ffeb00;
+  color: #000;
+}
+
+.topnav-right {
+  float: right;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 5px 2fr;
+  height: calc(100vh - 50px); /* Subtract nav height */
+}
+
+.left-grid,
+.right-grid {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  height: calc(100vh - 50px);
+  overflow: auto;
+}
+
+.left-grid {
+  background-color: #000000;
+  z-index: 0;
+}
+.left-grid h2,
+p,
+li {
+  color: rgb(255, 255, 255);
+}
+.right-grid {
+  background-color: #e0e0ff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+textarea {
+  background-color: #ccc;
+  width: 100%;
+  height: 50%;
+  font-family: monospace;
+  padding: 1rem;
+  resize: none;
+  border: none;
+  outline: none;
+}
+
+iframe {
+  width: 100%;
+  height: 50%;
+  border: none;
+  background: white;
+}
+.levels {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  padding: 4px 8px;
+  background: transparent;
+  text-decoration: none;
+  color: black;
+}
+.divider {
+  background-color: #888;
+  cursor: col-resize;
+  width: 5px;
+}
+#line {
+  height: 2px;
+  border: none;
+  background-color: gray;
+  margin: 0.5rem 0;
+}
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.left-grid-text h2 {
+  text-align: center;
+}
+.left-grid-text li {
+  margin-left: 10px;
+}
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  
+}
+
+.checklist li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: #ffffff22;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.checklist input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+}
+.button-text {
+  font-family: "Epilogue", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  padding: 10px 10px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #577bc1;
+}
+.button-text:hover {
+  transform: translateY(-5px);
+  background-color: #ffeb00;
+  color: #000000;
+}
+.cheat-sheet-overlay {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.cheat-sheet-content {
+  background-color: #1e1e2f;
+  margin: 10% auto;
+  padding: 20px;
+  border: 2px solid #888;
+  width: 60%;
+  border-radius: 10px;
+  color: white;
+  font-family: "Epilogue", sans-serif;
+  line-height: 1.8;
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: white;
+}
+.button-code {
+  font-family: "Epilogue", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  padding: 10px 10px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #577bc1;
+}
+.button-code:hover {
+  transform: translateY(-5px);
+  background-color: #ffeb00;
+  color: #000000;
+}
+.bio {
+  text-align: center;
+}
+ul ul {
+  margin-left: 1.5em;
+  list-style-type: circle; /* or disc/square for variety */
+}
+
+.bonus-sublists {
+  list-style-type: disc;
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.bonus-sublists li {
+  background: none;
+  border: none;
+  padding: 0.1rem 0;
+  margin: 0;
+  line-height: 1.3;
+}
+/*
+.logo {
+  height: 50px;  
+  width: auto;
+  object-fit: contain;
+  transform: translate(-10px, 5px); 
+
+}
+  */
+.logo {
+  height: 50px;  /* fits inside 60px navbar */
+  width: auto;
+  object-fit: contain;
+  transform: translateY(5px);  /* X = left, Y = down */
+}
+/* Starry modal overlay */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6); /* translucent dark overlay */
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-out;
+  display: none;
+}
+
+
+/* Popup box with spacey glow */
+.modal-content {
+  background: rgba(30, 30, 60, 0.95);
+  color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 3px solid #66faff; /* bright neon blue border */
+  width: 380px;
+  max-width: 95%;
+  animation: popIn 0.4s ease-out;
+ 
+
+  
+}
+
+/* Buttons inside modal */
+.modal-content button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(145deg, #1e90ff, #00bfff);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(145deg, #1e90ff, #00bfff);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.modal-content button:hover {
+  background: #00ffff;
+  transform: scale(1.05);
+}
+
+/* Fade in the background overlay */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Zoom effect for modal */
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* Match modal spacing from CSS Styling */
+.modal-content {
+  line-height: 1.8;
+  
+}
+
+/* Improve checklist spacing if shown in modal */
+.checklist li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* <-- This is key */
+  line-height: 1.5;
+  
+}
+
+/* Ensure nested lists in modal (or elsewhere) are well-spaced */
+ul ul {
+  margin-left: 1.5em;
+  list-style-type: circle;
+  line-height: 1.6;
+}
+/* MOBILE */
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-grid,
+  .right-grid {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  #editor, #preview {
+    height: 250px; /* reasonable height for touch interaction */
+    width: 100%;
+  }
+
+  .topnav {
+    flex-direction: column;
+    height: auto;
+    align-items: flex-start;
+    padding-bottom: 0.5rem;
+  }
+
+  .topnav .levels,
+  .topnav-right {
+    position: static;
+    transform: none;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .topnav {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 10px 16px;
+    gap: 0.75rem;
+  }
+
+  .brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logo-link {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .logo {
+    height: 40px;
+    margin: 0 auto;
+  }
+
+  .topnav .levels {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    margin-top: 0.25rem;
+  }
+
+  .topnav select {
+    font-size: 16px;
+    padding: 6px;
+    margin-left: 0.5rem;
+  }
+
+  .topnav-right {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0.5rem;
+  }
+
+  .topnav a {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+.levels {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  gap: 0.25rem;
+  font-weight: bolder;
+  color: #000;
+}
+
+.levels label {
+  font-size: 14px;
+  color: #333;
+}
+
+.levels select {
+  font-family: "Epilogue", sans-serif;
+  font-size: 14px;
+  padding: 6px 12px;
+  border: 2px solid #577bc1;
+  border-radius: 8px;
+  background-color: #f4f7ff;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-weight: bold; /* 🔥 Add this */
+}
+
+.levels select:focus {
+  border-color: #ffeb00;
+  box-shadow: 0 0 5px #ffeb00;
+  background-color: #fff;
+}

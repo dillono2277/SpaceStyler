@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SpaceStyler - CSS Styling: Level 2</title>
+    <link rel="stylesheet" href="../../css/css-styling.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://api.fontshare.com/v2/css?f[]=epilogue@400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="topnav">
+      <div class="brand">
+  <a href="../../home.html" class="logo-link">
+    <img src="../../photos/spacestylerlogo.png" class="logo" alt="SpaceStyler Logo" />
+  </a>
+</div>
+      <div class="levels">
+        
+        <select name="levels" id="levels">
+        <option value="../../css-styling-lvl1.html">Level 1</option>
+        <option value="../../css-styling-lvl2.html" selected>Level 2</option>
+        <option value="../../css-styling-lvl3.html">Level 3</option>
+        <option value="../../css-styling-lvl4.html">Level 4</option>
+      </select>
+      </div>
+      <div class="topnav-right">
+        <a href="../../home.html">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="left-grid">
+        <div class="left-grid-text">
+          <div class="left-grid-heading">
+            <h2>CSS Styling: Level 2</h2>
+          </div>
+          <ul class="checklist">
+            <li>
+              <input type="checkbox" />Add "padding" to give
+              elements inner spacing
+            </li>
+            <li>
+              <input type="checkbox" />Add a "border" for visual
+              framing
+            </li>
+            <li>
+              <input type="checkbox" />Apply a "box-shadow" to
+              create a glowing effect
+            </li>
+            <li>
+              <input type="checkbox" />Use "border-radius" to
+              round corners
+            </li>
+            <li>
+              <input type="checkbox" />Align text using
+              "text-align"
+            </li>
+            <li>
+              <input type="checkbox" />Make a "banner" with a set
+              "width" and "height"
+            </li>
+            <li>
+              <input type="checkbox" />Style the
+              "background-image"
+            </li>
+            <li>
+              <input type="checkbox" />Improve readability using
+              "line-height" and "letter-spacing"
+            </li>
+          </ul>
+
+          <button class="button-text">Need Help? (Cheat Sheet)</button>
+          <button class="button-code" onclick="revealSolution()">
+            Show Completed Code
+          </button>
+          <button class="button-code" onclick="resetCode()">Reset Code</button>
+        </div>
+      </div>
+
+      <div class="divider" id="dragbar"></div>
+
+      <div class="right-grid">
+        <div class="code-split">
+          <div class="editor-section">
+            <div class="code-label">CSS EDITOR</div>
+            <textarea id="editor"></textarea>
+          </div>
+          <div class="viewer-section">
+            <div class="code-label">HTML CODE</div>
+            <div class="html-viewer">
+              <pre><code id="htmlDisplay"></code></pre>
+            </div>
+          </div>
+        </div>
+
+        <hr id="line" />
+        <iframe id="preview"></iframe>
+      </div>
+    </div>
+    <!-- Cheat Sheet Popup -->
+    <div id="cheatSheetOverlay" class="cheat-sheet-overlay">
+      <div class="cheat-sheet-content">
+        <span class="close-btn" onclick="closeCheatSheet()">&times;</span>
+        <h3>CSS Styling Cheat Sheet</h3>
+        <ul>
+          <li>
+            <code>body { text-align: center; }</code> – Center all page text
+          </li>
+          <li>
+            <code>.element { margin: auto; }</code> – Horizontally center a
+            block element
+          </li>
+          <li>
+            <code>.element { padding: 1rem; }</code> – Add inner spacing to an
+            element
+          </li>
+          <li>
+            <code>.element { border: 2px solid color; }</code> – Add a border to
+            an element
+          </li>
+          <li>
+            <code>.element { box-shadow: 0 0 10px color; }</code> – Create a
+            glowing effect
+          </li>
+          <li>
+            <code>.element { border-radius: 10px; }</code> – Round the corners
+            of a box
+          </li>
+          <li>
+            <code>.banner { background-image: url('image.jpg'); }</code> – Add a
+            background image
+          </li>
+          <li>
+            <code>.banner { background-size: cover; }</code> – Make the image
+            cover the element
+          </li>
+          <li>
+            <code>.container { display: flex; justify-content: center; }</code>
+            – Center content using Flexbox
+          </li>
+          <li>
+            <code>.text { line-height: 1.5; }</code> – Adjust vertical spacing
+            between lines
+          </li>
+          <li>
+            <code>.text { letter-spacing: 0.5px; }</code> – Adjust spacing
+            between letters
+          </li>
+          <li>
+            <code>.text { text-transform: capitalize; }</code> – Capitalize the
+            first letter of each word
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="completionModal" style="display: none;" class="modal">
+  <div class="modal-content">
+    <h2>🎉 Level Complete!</h2>
+    <p>Would you like to continue?</p>
+    <button onclick="stayHere()">Stay</button>
+    <button onclick="goToNextLevel()">Next Level</button>
+  </div>
+</div>
+<div id="completionModal" style="display: none;" class="modal">
+  <div class="modal-content">
+    <h2>🎉 Level Complete!</h2>
+    <p>Would you like to continue?</p>
+    <button onclick="stayHere()">Stay</button>
+    <button onclick="goToNextLevel()">Next Level</button>
+  </div>
+</div>
+    
+
+
+    <script src="../../js/css-styling/css-styling-level2.js" defer></script>
+  </body>
+</html>

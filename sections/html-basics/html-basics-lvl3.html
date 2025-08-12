@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SpaceStyler - HTML Basics</title>
+    <link rel="stylesheet" href="../../css/html-basics.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://api.fontshare.com/v2/css?f[]=epilogue@400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="topnav">
+      <div class="brand">
+  <a href="../../home.html" class="logo-link">
+    <img src="../../photos/spacestylerlogo.png" class="logo" alt="SpaceStyler Logo" />
+  </a>
+</div>
+      <div class="levels">
+        
+        <select name="levels" id="levels">
+        <option value="../../html-basics-lvl1.html">Level 1</option>
+        <option value="../../html-basics-lvl2.html">Level 2</option>
+        <option value="../../html-basics-lvl3.html"selected>Level 3</option>
+        <option value="../../html-basics-lvl4.html">Level 4</option>
+      </select>
+      </div>
+      <div class="topnav-right">
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="left-grid">
+        <div class="left-grid-text">
+          <h2>HTML Basics: Level 3</h2>
+          <div class="bio">
+            <p>Structure and Sections</p>
+          </div>
+          <ul class="checklist">
+            <li>
+              <input type="checkbox" /> Wrap your name and a short space bio in
+              a &lt;section&gt; with a &lt;header&gt; title
+            </li>
+            <li>
+              <input type="checkbox" /> Add a &lt;footer&gt; with a made-up
+              “last updated” message
+            </li>
+            <li>
+              <input type="checkbox" /> Use a &lt;div&gt; to group together your
+              different sections
+            </li>
+            <li>
+              <input type="checkbox" /> Insert an &lt;hr&gt; between two
+              sections like “About Me” and “My Favorite Planets”
+            </li>
+            <li>
+              <input type="checkbox" /> Use &lt;br&gt; to space out fun facts in
+              a single paragraph
+            </li>
+            <li>
+              <input type="checkbox" />
+              <div>
+                (Optional Bonus) Build your own astronaut profile! Your profile
+                should include:
+                <ul class="bonus-sublists">
+                  <li>1. A heading for your name</li>
+                  <li>2. A short paragraph with line breaks</li>
+                  <li>3. A picture (../../photos/astronaut.jpg)</li>
+                  <li>4. A list of space skills inside a &lt;div&gt;</li>
+                  <li>
+                    5. A &lt;footer&gt; with the year you joined the SpaceStyler
+                    Academy
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <button class="button-text">Need Help? (Cheat Sheet)</button>
+          <button class="button-code" onclick="revealSolution()">
+            Show Completed Code
+          </button>
+          <button class="button-code" onclick="resetCode()">Reset Code</button>
+        </div>
+      </div>
+      <div class="divider" id="dragbar"></div>
+      <div class="right-grid">
+        <textarea id="editor"></textarea>
+        <hr id="line" />
+        <iframe id="preview"></iframe>
+      </div>
+    </div>
+
+    <script src="../../js/htmlbasics/html-basics-level3.js" defer></script>
+
+    <!-- Cheat Sheet Popup -->
+    <div id="cheatSheetOverlay" class="cheat-sheet-overlay">
+      <div class="cheat-sheet-content">
+        <span class="close-btn" onclick="closeCheatSheet()">&times;</span>
+        <h3>HTML Cheat Sheet</h3>
+        <ul>
+          <li>
+            <code>&lt;section&gt;...&lt;/section&gt;</code> – Defines a section
+            of content
+          </li>
+          <li>
+            <code>&lt;header&gt;...&lt;/header&gt;</code> – Intro or heading
+            area of a section
+          </li>
+          <li>
+            <code>&lt;footer&gt;...&lt;/footer&gt;</code> – Footer area with
+            notes or dates
+          </li>
+          <li>
+            <code>&lt;div&gt;...&lt;/div&gt;</code> – Groups content together
+          </li>
+          <li>
+            <code>&lt;hr&gt;</code> – Horizontal line for separating sections
+          </li>
+          <li><code>&lt;br&gt;</code> – Line break inside a paragraph</li>
+          <li>
+            <code>&lt;ul&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ul&gt;</code> –
+            Unordered list with items
+          </li>
+          <li>
+            <code>&lt;h1&gt; to &lt;h6&gt;</code> – Headings (h1 is largest)
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="completionModal" style="display: none;" class="modal">
+  <div class="modal-content">
+    <h2>🎉 Level Complete!</h2>
+    <p>Would you like to continue?</p>
+    <button onclick="stayHere()">Stay</button>
+    <button onclick="goToNextLevel()">Next Level</button>
+  </div>
+</div>
+  </body>
+</html>

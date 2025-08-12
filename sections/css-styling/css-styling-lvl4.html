@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SpaceStyler - CSS Styling: Level 4</title>
+    <link rel="stylesheet" href="../../css/css-styling.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://api.fontshare.com/v2/css?f[]=epilogue@400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="topnav">
+      <div class="brand">
+  <a href="../../home.html" class="logo-link">
+    <img src="../../photos/spacestylerlogo.png" class="logo" alt="SpaceStyler Logo" />
+  </a>
+</div>
+      <div class="levels">
+        
+        <select name="levels" id="levels">
+        <option value="../../css-styling-lvl1.html">Level 1</option>
+        <option value="../../css-styling-lvl2.html">Level 2</option>
+        <option value="../../css-styling-lvl3.html">Level 3</option>
+        <option value="../../css-styling-lvl4.html"selected>Level 4</option>
+      </select>
+
+      </div>
+      <div class="topnav-right">
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="left-grid">
+        <div class="left-grid-text">
+          <div class="left-grid-heading">
+            <h2>CSS Styling: Level 4</h2>
+          </div>
+          <ul class="checklist">
+            <li>
+              <input type="checkbox" />Style the "body" with a dark background,
+              neon text, and centered layout
+            </li>
+            <li>
+              <input type="checkbox" />Use "flexbox" in the navbar to space out
+              content and apply padding and glow
+            </li>
+            <li>
+              <input type="checkbox" />Create a dropdown menu that appears on
+              hover using "hover" and "display"
+            </li>
+            <li>
+              <input type="checkbox" />Use "grid layout" to arrange the profile
+              image and info, and make the image circular
+            </li>
+            <li>
+              <input type="checkbox" />Style the grid section under the profile
+              using "display: grid", gap, and padding
+            </li>
+            <li>
+              <input type="checkbox" />Use "flexbox" to center the image and
+              list inside their grid columns
+            </li>
+            <li>
+              <input type="checkbox" />Style the space-themed list: remove
+              default padding, change bullets, and add neon borders
+            </li>
+          </ul>
+
+          <button class="button-text">Need Help? (Cheat Sheet)</button>
+          <button class="button-code" onclick="revealSolution()">
+            Show Completed Code
+          </button>
+          <button class="button-code" onclick="resetCode()">Reset Code</button>
+        </div>
+      </div>
+
+      <div class="divider" id="dragbar"></div>
+
+      <div class="right-grid">
+        <div class="code-split">
+          <div class="editor-section">
+            <div class="code-label">CSS EDITOR</div>
+            <textarea id="editor"></textarea>
+          </div>
+          <div class="viewer-section">
+            <div class="code-label">HTML CODE</div>
+            <div class="html-viewer">
+              <pre><code id="htmlDisplay"></code></pre>
+            </div>
+          </div>
+        </div>
+
+        <hr id="line" />
+        <iframe id="preview"></iframe>
+      </div>
+    </div>
+    <!-- Cheat Sheet Popup -->
+    <div id="cheatSheetOverlay" class="cheat-sheet-overlay">
+      <div class="cheat-sheet-content">
+        <span class="close-btn" onclick="closeCheatSheet()">&times;</span>
+        <h3>CSS Styling Cheat Sheet</h3>
+
+        <h4>🔧 Base Layout</h4>
+        <ul>
+          <li>
+            <code>body { background-color: ...; }</code> – Set page background
+          </li>
+          <li><code>body { color: ...; }</code> – Set text color</li>
+          <li><code>body { font-family: ...; }</code> – Set page font</li>
+          <li><code>body { padding: ...; }</code> – Add spacing inside page</li>
+          <li><code>body { text-align: ...; }</code> – Center all text</li>
+          <li><code>body { box-sizing: ...; }</code> – Set sizing behavior</li>
+        </ul>
+
+        <h4>📐 Flexbox</h4>
+        <ul>
+          <li><code>.element { display: flex; }</code> – Use flexbox layout</li>
+          <li>
+            <code>.element { justify-content: ...; }</code> – Align items
+            horizontally
+          </li>
+          <li>
+            <code>.element { align-items: ...; }</code> – Align items vertically
+          </li>
+          <li>
+            <code>.element { gap: ...; }</code> – Add space between flex items
+          </li>
+        </ul>
+
+        <h4>🧱 Grid</h4>
+        <ul>
+          <li><code>.element { display: grid; }</code> – Use grid layout</li>
+          <li>
+            <code>.element { grid-template-columns: ...; }</code> – Define grid
+            columns
+          </li>
+        </ul>
+
+        <h4>🛰 Navbar & Dropdown</h4>
+        <ul>
+          <li>
+            <code>.element { position: relative; }</code> – Set relative context
+            for dropdown
+          </li>
+          <li>
+            <code>.dropdown-content { display: none; }</code> – Hide dropdown by
+            default
+          </li>
+          <li>
+            <code>.element:hover .dropdown-content { display: block; }</code> –
+            Show on hover
+          </li>
+        </ul>
+
+        <h4>🖼 Image Styling</h4>
+        <ul>
+          <li>
+            <code>.image { width: ...; height: ...; }</code> – Set image size
+          </li>
+          <li>
+            <code>.image { border-radius: 50%; }</code> – Make image circular
+          </li>
+          <li>
+            <code>.image { border: ...; }</code> – Add border around image
+          </li>
+        </ul>
+
+        <h4>📦 Box & Card Styling</h4>
+        <ul>
+          <li><code>.element { max-width: ...; }</code> – Limit max width</li>
+          <li>
+            <code>.element { margin: ... auto; }</code> – Center a block element
+          </li>
+          <li><code>.element { padding: ...; }</code> – Add inner spacing</li>
+          <li><code>.element { border: ...; }</code> – Add border</li>
+          <li><code>.element { border-radius: ...; }</code> – Round corners</li>
+          <li>
+            <code>.element { box-shadow: ...; }</code> – Add glowing effect
+          </li>
+          <li>
+            <code>.element { overflow: ...; }</code> – Handle overflow content
+          </li>
+        </ul>
+
+        <h4>🔤 Text & Spacing</h4>
+        <ul>
+          <li><code>.text { font-size: ...; }</code> – Change font size</li>
+          <li><code>.text { color: ...; }</code> – Change text color</li>
+          <li>
+            <code>.text { margin-bottom: ...; }</code> – Add space under text
+          </li>
+        </ul>
+
+        <h4>🖱 Hover & Interaction</h4>
+        <ul>
+          <li>
+            <code>.element:hover { cursor: ...; }</code> – Change cursor on
+            hover
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="completionModal" style="display: none;" class="modal">
+  <div class="modal-content">
+    <h2>🎉 Section Complete!</h2>
+    <p>Would you like to learn Visual Effects/Animation?</p>
+    <button onclick="stayHere()">Stay</button>
+    <button onclick="goToHome()">Home</button>
+    <button onclick="goToNextLevel()">Next Section</button>
+
+  </div>
+</div>
+
+    <script src="../../js/css-styling/css-styling-level4.js" defer></script>
+  </body>
+</html>

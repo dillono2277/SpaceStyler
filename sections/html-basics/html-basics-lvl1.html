@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SpaceStyler - HTML Basics</title>
+    <link rel="stylesheet" href="../../css/html-basics.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <link href="https://api.fontshare.com/v2/css?f[]=epilogue@400&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="topnav">
+      
+    <div class="brand">
+      <a href="../../home.html" class="logo-link">
+        <img src="../../photos/spacestylerlogo.png" class="logo" alt="SpaceStyler Logo" />
+      </a>
+    </div>
+
+      <div class="levels">
+        
+
+        <select name="levels" id="levels">
+        <option value="../../html-basics-lvl1.html"selected>Level 1</option>
+        <option value="../../html-basics-lvl2.html" >Level 2</option>
+        <option value="../../html-basics-lvl3.html">Level 3</option>
+        <option value="../../html-basics-lvl4.html">Level 4</option>
+      </select>
+      </div>
+      <div class="topnav-right">
+      
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="left-grid">
+        <div class="left-grid-text">
+          <h2>HTML Basics: Level 1</h2>
+          <p>Try editing this HTML code to see the live result!</p>
+          <form autocomplete="off">
+          <ul class="checklist">
+            <li><input type="checkbox" /> Edit the heading with your name!</li>
+            <li><input type="checkbox" /> Edit the paragraph with your favorite animal!</li>
+            <li><input type="checkbox" /> Change the color of your name!</li>
+            <li><input type="checkbox" /> Add a sub-heading with your favorite color (hint: use h2)</li>
+          </ul>
+        </form>
+
+        </div>
+      </div>
+      <div class="divider" id="dragbar"></div>
+      <div class="right-grid">
+        <textarea id="editor"></textarea>
+        <hr id="line" />
+
+        <iframe id="preview"></iframe>
+      </div>
+    </div>
+    <div id="completionModal" style="display: none;" class="modal">
+  <div class="modal-content">
+    <h2>🎉 Level Complete!</h2>
+    <p>Would you like to continue?</p>
+    <button onclick="stayHere()">Stay</button>
+    <button onclick="goToNextLevel()">Next Level</button>
+  </div>
+</div>
+
+
+    <script src="../../js/htmlbasics/html-basics-level1.js" defer></script>
+  </body>
+</html>
